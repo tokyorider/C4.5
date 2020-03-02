@@ -20,8 +20,8 @@ def entropy(set, attribute=None):
 
     true_prob = list(set.values()).count(True) / len(set) if len(set) > 0 else 0
     false_prob = 1 - true_prob
-    return -1 * (true_prob * (log2(true_prob) if true_prob > 0 else 0)
-                 + false_prob * (log2(false_prob) if false_prob > 0 else 0))
+    return -(true_prob * (log2(true_prob) if true_prob > 0 else 0)
+                + false_prob * (log2(false_prob) if false_prob > 0 else 0))
 
 
 def split_info(set, attribute):
